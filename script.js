@@ -65,12 +65,19 @@ let barbara = {
     let email = 'estação';
     let senha1 = 123;
     
-    
     let login = prompt('digite o email'); 
     let senha = prompt('digite a senha'); 
 
+    let saldo =  1000;
+    let valor;
+
     if(login==email && senha1==senha){
-        alert("entrou")
+        alert("entrou");
+       valor = Number (prompt('digite o valor do saque'));
+        if(valor > saldo)
+        alert ("vc nao pode sacar");
+        else{ alert("vc pode sacar")}
     }else{
-        alert('email ou senha incorreto')
+        alert('email ou senha incorreto');
+        
     }
