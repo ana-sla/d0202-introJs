@@ -2,7 +2,7 @@
 
 var variavel1;
 let variavel2 = "estação hack";
-const variavel3 = 12;
+const variavel3 = 12;//constante, nao muda o valor
 
 //Atribuição
 
@@ -16,7 +16,7 @@ let exemplo;
 exemplo = "Ana"; //pode ser nome (string)
 exemplo = 23; //numero
 exemplo = 1.66; 
-exemplo = true; //buleano (verdadeiro ou falso)
+exemplo = true; //boolean (verdadeiro ou falso)
 exemplo = false;
 
 
@@ -65,23 +65,36 @@ let barbara = {
     let email = 'estação';
     let senha1 = 123;
     
-    let login = prompt('digite o email'); 
-    let senha = prompt('digite a senha'); 
-
+    
     let saldo =  1000;
     let valor;
+    let tentativa = 0;
+    
+    
+    while(tentativa<=3){
+        
+        let login = prompt('digite o email'); 
+        let senha = prompt('digite a senha'); 
 
-    if(login==email && senha1==senha){
+        if(login==email && senha1==senha){
+        tentativa = 100;    
         alert("entrou");
-       valor = Number (prompt('digite o valor do saque'));
+        valor = Number (prompt('digite o valor do saque'));
+
             if(valor > saldo)
                 alert ("vc nao pode sacar");
-                
+            
             else{ 
                  alert("vc pode sacar");
                  saldo = saldo - valor;
-                 alert(`O seu novo saldo é ${saldo}`);}
+                 alert(`O seu novo saldo é ${saldo}`);
+                }
     }else{
         alert('email ou senha incorreto');
+        tentativa++; 
         
+            if(tentativa==4)
+                alert('conta bloqueada');
     }
+    
+}
