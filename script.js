@@ -74,9 +74,13 @@ let barbara = {
     if(login==email && senha1==senha){
         alert("entrou");
        valor = Number (prompt('digite o valor do saque'));
-        if(valor > saldo)
-        alert ("vc nao pode sacar");
-        else{ alert("vc pode sacar")}
+            if(valor > saldo)
+                alert ("vc nao pode sacar");
+                
+            else{ 
+                 alert("vc pode sacar");
+                 saldo = saldo - valor;
+                 alert(`O seu novo saldo é ${saldo}`);}
     }else{
         alert('email ou senha incorreto');
         
